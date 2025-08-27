@@ -64,7 +64,7 @@ if "df" in st.session_state:
     st.bar_chart(grouped)
 
     st.subheader("Plotly Chart")
-    fig = px.histogram(st.session_state["df"], x="SENTIMENT_SCORE", nbins=20, title="Sentiment Score Distribution")
+    fig = px.histogram(filtered_df, x="SENTIMENT_SCORE", nbins=20, title="Sentiment Score Distribution")
     fig.update_layout(bargap=0.2, xaxis_title="Sentiment Score", yaxis_title="Count", showlegend=False)
     st.plotly_chart(fig, use_container_width=True)
 
